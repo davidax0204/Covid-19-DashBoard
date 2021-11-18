@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <link rel="stylesheet" href="navigation-bar.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="side-bar.css">
+    <link rel="stylesheet" href="main-content.css">
+    <link rel="stylesheet" href="vaccination-rates.css">
+    <link rel="stylesheet" href="hospital-stats.css">
+    <link rel="stylesheet" href="cities-stats.css">
+    <link rel="stylesheet" href="ramzor.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="nav-container">
+        <div class="navigation-bar">
+            <div class="logo-menu-container">
+                <button class="main-menu">
+                    <div class="menu-line" id="menu-line-top"></div>
+                    <div class="menu-line" id="menu-line-middle"></div>
+                    <div class="menu-line" id="menu-line-bottom"></div>
+                </button>
+                <img class="logo" src="images/logo.png" alt="">
+            </div>
+
+            <div class="title-container">
+                <a class="title">נגיף הקורונה בישראל - תמונת מצב כללית</a>
+                <div class="sub-title">
+                    <span class="ng-star-inserted">
+                        עדכון אחרון: </span><!----><span>17 בינואר 2021
+                    |
+                    09:18</span>
+                </div>
+            </div>
+
+            <div class="header-button">
+                <button class="header-button-style">
+                    <span class="header-button-content-words">לתצוגה נגישה</span>
+                </button>
+            </div>
+
+        </div> 
+    </div>
+
+    <div class="main">
+
+        <!-- Side Bar -->
+        <div class="side-bar">
+            <div class="side-bar-items-container">
+
+                <!-- מצב כללי -->
+                <div class="side-bar-item-container">
+                    <div class="side-bar-item-container-inner-container">
+                        <div class="side-bar-item-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25">
+                                <defs>
+                                    <linearGradient id="h36gxeqsaa" x1="4.253%" x2="95.747%" y1="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#B1D47B"></stop>
+                                        <stop offset="100%" stop-color="#00D6FF"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <g fill="none" fill-rule="evenodd">
+                                    <g stroke="url(#h36gxeqsaa)" stroke-width="2" transform="translate(-1373 -123)">
+                                        <g>
+                                            <g>
+                                                <path d="M55 32.5V43h-9V32.5h9zM68 35v8h-8.5v-8H68zm0-15v10.5h-8.5V20H68zm-13 0v8h-9v-8h9z" transform="translate(1327 -273) translate(1 377)"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                                </svg>
+                        </div>
+                        <div class="side-bar-item-title">מצב כללי</div>
+                    </div>
+                    <div class="color-border "> </div>
+                </div>
+
+                <!-- אודות -->
+                <div class="side-bar-item-container">
+                    <div class="side-bar-item-container-inner-container ">
+                        <div class="side-bar-item-title side-bar-item-title-position-fixer side-bar-item-title-color-fixer">אודות</div>
+                    </div>
+                </div>
+
+                <!-- תנאי שימוש -->
+                <div class="side-bar-item-container">
+                    <div class="side-bar-item-container-inner-container ">
+                        <div class="side-bar-item-title side-bar-item-title-position-fixer side-bar-item-title-color-fixer">תנאי שימוש</div>
+                    </div>
+                </div>
+
+                <!-- מדריך למשתמש -->
+                <div class="side-bar-item-container">
+                    <div class="side-bar-item-container-inner-container ">
+                        <div class="side-bar-item-title side-bar-item-title-position-fixer side-bar-item-title-color-fixer">מדריך למשתמש</div>
+                    </div>
+                </div>
+
+                <!-- size correction to the div -->
+                <div class="spacer"></div>
+
+                <!-- GIS -->
+                <div class="side-bar-item-container">
+                    <div class="side-bar-item-container-inner-container">    
+                        <div class="side-bar-item-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                            <g fill="none" fill-rule="evenodd">
+                                <g fill="#EAEBEA" fill-rule="nonzero">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <path d="M50.62 3.972L42.18.817h-.095c-.044-.013-.09-.023-.135-.03h-.095c-.048-.004-.097-.004-.145 0h-.09c-.047.008-.094.02-.14.035l-8.065 3-8.065-3c-.307-.115-.65-.072-.92.114-.268.187-.43.493-.43.82v22.09c-.004.41.242.78.62.936l8.415 3.155H33.12c.174.054.36.054.535 0H33.74l8.065-3 8.065 3c.307.114.65.072.92-.115.269-.186.43-.493.43-.82V4.907c.008-.405-.23-.774-.6-.935zM32.41 25.557l-6.415-2.405V3.197l6.415 2.405v19.955zm8.415-2.405l-6.415 2.405V5.602l6.42-2.405-.005 19.955zm8.415 2.405l-6.41-2.405V3.197l6.415 2.405-.005 19.955z" transform="translate(-1370 -545) translate(1327 -273) translate(0 515) translate(19 302) translate(.34 .242)"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                            </svg>
+                        </div>
+                        <div class="side-bar-item-title side-bar-item-title-color-fixer">GIS</div>
+                    </div>
+                </div>
+
+                <!-- הי-DATA -->
+                <div class="side-bar-item-container">
+                    <div class="side-bar-item-container-inner-container">
+                        <div class="side-bar-item-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28">
+                            <g fill="none" fill-rule="evenodd">
+                                <g fill="#EAEBEA" fill-rule="nonzero">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path d="M49.195 94.044c-1.747 0-3.165 1.442-3.165 3.217 0 .25.031.501.083.731l-4.974 2.089c-.452-.836-1.162-1.514-2.004-1.932l1.716-4.94c.062.01.123.01.185.01 1.14 0 2.076-.95 2.076-2.11 0-1.159-.935-2.109-2.086-2.109-1.151 0-2.076.95-2.076 2.11 0 .73.37 1.378.925 1.754l-1.716 4.94c-.33-.073-.679-.115-1.028-.115-.73 0-1.418.178-2.035.48l-1.572-2.485c.565-.533.925-1.305.925-2.151 0-1.62-1.295-2.946-2.898-2.946-1.603 0-2.898 1.327-2.898 2.946 0 1.618 1.295 2.945 2.898 2.945.39 0 .77-.084 1.11-.23l1.572 2.486c-.76.626-1.315 1.493-1.552 2.496l-6.063-.794c-.144-.773-.822-1.368-1.623-1.368-.915 0-1.655.752-1.655 1.681 0 .93.74 1.682 1.655 1.682.657 0 1.222-.397 1.49-.961l6.063.794v.073c0 1.138.4 2.172 1.068 2.987l-4.388 4.679c-.565-.408-1.243-.637-1.983-.637-1.901 0-3.453 1.577-3.453 3.509s1.552 3.509 3.453 3.509c1.901 0 3.453-1.577 3.453-3.51 0-.814-.267-1.555-.73-2.15l4.388-4.68c.637.491 1.398.815 2.23.92l-.154 2.788c-.678.209-1.161.856-1.161 1.608 0 .93.74 1.682 1.654 1.682.915 0 1.655-.752 1.655-1.682 0-.73-.463-1.357-1.12-1.587l.154-2.8c.555-.062 1.079-.218 1.562-.47l4.44 6.957c-.34.376-.556.877-.556 1.43 0 1.16.936 2.11 2.076 2.11 1.14 0 2.076-.95 2.076-2.11 0-1.159-.935-2.11-2.076-2.11-.236 0-.452.042-.668.116l-4.44-6.956c.422-.355.792-.794 1.06-1.285l3.791 1.671c0 .053-.01.105-.01.157 0 .93.74 1.681 1.655 1.681.914 0 1.654-.751 1.654-1.681s-.74-1.681-1.654-1.681c-.494 0-.936.219-1.234.564l-3.792-1.671c.134-.429.196-.888.196-1.358 0-.45-.062-.877-.175-1.285l4.974-2.099c.555.909 1.551 1.514 2.682 1.514 1.747 0 3.165-1.44 3.165-3.216 0-1.776-1.408-3.207-3.145-3.207z" transform="translate(-1369 -633) translate(1327 -273) translate(0 515) translate(19 302)"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                            </svg>
+                        </div>
+
+                        <div class="side-bar-item-title side-bar-item-title-color-fixer">הי-DATA</div>
+
+                    </div>
+                </div>
+
+                <!-- Data Gov -->
+                <div class="side-bar-item-container">
+                    <div class="side-bar-item-container-inner-container">
+                        
+
+                        <div class="side-bar-item-image"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30">
+                            <g fill="none" fill-rule="evenodd">
+                                <g fill="#EAEBEA" fill-rule="nonzero">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <path d="M11.942 4.029c.828-.036 1.512.612 1.512 1.404v10.296c0 .144.108.252.252.252h10.296c.396 0 .756.18 1.044.432.252.288.396.684.396 1.044-.468 6.696-6.012 11.952-12.744 11.952-.288 0-.612 0-.9-.036C5.534 28.941.458 23.865.026 17.601c-.216-3.42.9-6.732 3.132-9.288 2.268-2.556 5.364-4.104 8.784-4.284zm.061 1.999C9.148 6.2 6.568 7.507 4.676 9.674c-1.892 2.167-2.855 4.954-2.649 7.843.379 5.332 4.644 9.598 9.976 9.976.241.035.516.035.757.035 5.676 0 10.389-4.438 10.733-10.08l-10.074.07c-.894 0-1.616-.723-1.616-1.618l.2-9.872zm5.62-6.023c6.3.432 11.34 5.508 11.771 11.772.036.396-.108.828-.396 1.116-.288.324-.684.504-1.116.504H17.514c-.828 0-1.512-.684-1.512-1.512V1.517c0-.864.72-1.584 1.62-1.512zM18.067 2c-.033 0-.066.033-.066.065v9.382c0 .032.033.065.066.065h9.38c.033 0 .033 0 .033-.033.033-.032.033-.032 0-.032-.326-5.05-4.397-9.121-9.413-9.447z" transform="translate(-1369 -720) translate(1327 -273) translate(0 515) translate(19 302) translate(23.34 176)"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                            </svg>
+                        </div>
+                        <div class="side-bar-item-title side-bar-item-title-color-fixer">Data Gov</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content"> 
+            <div class="main-content-innner-part">
+
+                <!-- upper cards -->
+                <div class="stats-continer ">
+                    <div class="stat-continer num6">
+                        <div class="stat-continer-inner-part">
+                            <div class="stat-container-inner-part-content">
+                                <div class="stat-container-inner-part-content-title">
+                                    <div class="stat-container-inner-part-content-title-part">אחוז בדיקות חיוביות אתמול</div>
+                                    <div class="stat-container-inner-part-content-title-symbol">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" class="eva eva-info" fill="currentColor"><g data-name="Layer 2"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg>
+                                    </div>
+                                </div>
+                                <div class="stat-container-inner-part-content-number">8%</div>
+                                <div class="stat-container-inner-part-content-number-smaller"> <span style="font-weight: 700;">30,352</span>
+                                     בדיקות אתמול</div>
+                                    
+                            </div>
+                            <div class="stat-container-inner-part-content-button">
+                                <span>בדיקות יומיות</span>
+                                <div class="circle">
+                                    <div class="bar-icon" ><svg xmlns="http://www.w3.org/2000/svg"  class="eva eva-bar-chart-2" fill="currentColor"><g data-name="Layer 2"><g data-name="bar-chart-2"><rect width="18" height="18" transform="rotate(90 12 12)" opacity="0"></rect><path d="M12 8a1 1 0 0 0-1 1v11a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1z"></path><path d="M19 4a1 1 0 0 0-1 1v15a1 1 0 0 0 2 0V5a1 1 0 0 0-1-1z"></path><path d="M5 12a1 1 0 0 0-1 1v7a1 1 0 0 0 2 0v-7a1 1 0 0 0-1-1z"></path></g></g></svg></div>
+                                </div>
+                                <span class="pop-up"> 
+                                    <div class="pop-up-content">
+                                        <div class="pop-up-title"> בדיקות - מגמת שינוי יומית</div>
+                                    </div>
+                                    <div id="pop-up-grpaph-1" style="height: 300px; width: 350px"></div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-continer num5">
+                        <div class="stat-continer-inner-part">
+                            <div class="stat-container-inner-part-content">
+                                <div class="stat-container-inner-part-content-title">
+                                    <div class="stat-container-inner-part-content-title-part">נפטרים מצטבר</div>
+                                    <div class="stat-container-inner-part-content-title-symbol">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" class="eva eva-info" fill="currentColor"><g data-name="Layer 2"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg>
+                                    </div>
+                                </div>
+                                <div class="stat-container-inner-part-content-number">4,825</div>
+                                
+                                    
+                            </div>
+                            <div class="stat-container-inner-part-content-button">
+                                <span>מגמת שינוי יומית</span>
+                                <div class="circle">
+                                    <div class="bar-icon" ><svg xmlns="http://www.w3.org/2000/svg"  class="eva eva-bar-chart-2" fill="currentColor"><g data-name="Layer 2"><g data-name="bar-chart-2"><rect width="18" height="18" transform="rotate(90 12 12)" opacity="0"></rect><path d="M12 8a1 1 0 0 0-1 1v11a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1z"></path><path d="M19 4a1 1 0 0 0-1 1v15a1 1 0 0 0 2 0V5a1 1 0 0 0-1-1z"></path><path d="M5 12a1 1 0 0 0-1 1v7a1 1 0 0 0 2 0v-7a1 1 0 0 0-1-1z"></path></g></g></svg></div>
+                                </div>
+                                <span class="pop-up"> 
+                                    <div class="pop-up-content">
+                                        <div class="pop-up-title">נפטרים - שינוי יומי</div>
+                                    </div>
+                                    <div id="pop-up-grpaph-2" style="height: 300px; width: 350px"></div>
+                                </span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="stat-continer num4">
+                        <div class="stat-continer-inner-part">
+                            <div class="stat-container-inner-part-content">
+                                <div class="stat-container-inner-part-content-title big-number-line-correction">
+                                    <div class="stat-container-inner-part-content-title-part">מתחסנים מנה ראשונה</div>
+                                    
+                                </div>
+                                <div class="stat-container-inner-part-content-number big-numbers">4,825,251</div>
+                                <div class="stat-container-inner-part-content-number-smaller"> <span style="font-weight: 700;">30,352</span>
+                                    בדיקות אתמול</div>
+                            </div>
+                            <div class="stat-container-inner-part-content second">
+                                <div class="stat-container-inner-part-content-title big-number-line-correction">
+                                    <div class="stat-container-inner-part-content-title-part">מתחסנים מנה ראשונה</div>
+                                    
+                                </div>
+                                <div class="stat-container-inner-part-content-number big-numbers">4,825,251</div>
+                                <div class="stat-container-inner-part-content-number-smaller"> <span style="font-weight: 700;">30,352</span>
+                                    בדיקות אתמול</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-continer num3">
+                        <div class="stat-continer-inner-part">
+                            <div class="stat-container-inner-part-content">
+                                <div class="stat-container-inner-part-content-title">
+                                    <div class="stat-container-inner-part-content-title-part">חולים קשה</div>
+                                    <div class="stat-container-inner-part-content-title-symbol">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" class="eva eva-info" fill="currentColor"><g data-name="Layer 2"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg>
+                                    </div>
+                                </div>
+                                <div class="stat-container-inner-part-content-number">1,237</div>
+                                <div class="stat-container-inner-part-content-number-smaller"> <span style="font-weight: 700;">24-</span>
+                                     מחצות</div>
+                                    
+                            </div>
+                            <div class="stat-container-inner-part-content-under-stat">
+                                <div class="stat">
+                                    <div class="dot"></div>
+                                    <span class="stat-container-inner-part-content-under-stat-statement">מתוכם קריטי<b> 419</b></span>
+                                    
+                                </div>
+                                <div class="stat">
+                                    <div class="dot dot-yellow"></div>
+                                    <span class="stat-container-inner-part-content-under-stat-statement">מונשמים<b> 330</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-continer num2">
+                        <div class="stat-continer-inner-part">
+                            <div class="stat-container-inner-part-content">
+                                <div class="stat-container-inner-part-content-title">
+                                    <div class="stat-container-inner-part-content-title-part"> חולים פעילים </div>
+                                    <div class="stat-container-inner-part-content-title-symbol">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" class="eva eva-info" fill="currentColor"><g data-name="Layer 2"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg>
+                                    </div>
+                                </div>
+                                <div class="stat-container-inner-part-content-number">69,973</div>
+                                <div class="stat-container-inner-part-content-number-smaller"> <span style="font-weight: 700;">6,045-</span>
+                                     מחצות</div>
+                                    
+                            </div>
+                            <div class="d3stat">
+                                <div class="d3stat-2">
+                                    <span>בית/ קהילה</span>
+                                    <div _ngcontent-usv-c157="" class="amount"><b>63,458</b></div>
+                                </div>
+                                <div class="d3stat-1">
+                                    <span>מלון</span>
+                                    <div _ngcontent-usv-c157="" class="amount"><b>1,486</b></div>
+                                </div>
+                                <div class="d3stat-1">
+                                    <span>בי"ח</span>
+                                    <div _ngcontent-usv-c157="" class="amount"><b>1,861</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-continer num1">
+                        <div class="stat-continer-inner-part">
+                            <div class="stat-container-inner-part-content">
+                                <div class="stat-container-inner-part-content-title">
+                                    <div class="stat-container-inner-part-content-title-part">מאומתים חדשים אתמול</div>
+                                    <div class="stat-container-inner-part-content-title-symbol">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" class="eva eva-info" fill="currentColor"><g data-name="Layer 2"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg>
+                                    </div>
+                                </div>
+                                <div class="stat-container-inner-part-content-number">2,453</div>
+                                <div class="stat-container-inner-part-content-number-smaller"> <span style="font-weight: 700;">2,546+</span>
+                                     מחצות</div>
+                                <div class="stat-container-inner-part-content-number-smaller smaller-number-correction"> <span style="font-weight: 700;">596,733</span>
+                                    סה''כ  </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- vaccination tables -->
+                <div class="vaccination-rates">
+                    <div class="vaccination-rates-container">
+                        <!-- title -->
+                        <div class="vaccination-rates-title">מדדי התחסנות</div>
+
+                        <!-- vaccination tables -->
+                        <div class="vaccination-rates-tables-container">
+                        
+                            <div class="vaccination-rates-table">
+                                <div class="vaccination-rates-tables-upper-part">
+                                    <div class="vaccination-rates-table-title">
+                                        <div class="vaccination-rates-table-title-main">אחוז מתחסנים מכלל האוכלוסיה</div>
+                                        <!-- <button class="vaccination-rates-table-title-main-buttom">buttom</button> -->
+                                    </div>
+                                    <div class="vaccination-rates-table-params">
+                                        <div class="vaccination-rates-table-param-container">
+                                            <div class="vaccination-rates-table-param-dot-greendark"></div>
+                                            <div class="vaccination-rates-table-param">% מתחסנים מנה ראשונה</div>
+                                        </div>
+                                        <div class="vaccination-rates-table-param-container">
+                                            <div class="vaccination-rates-table-param-dot-greenlight"></div>
+                                            <div class="vaccination-rates-table-param">% מתחסנים מנה שנייה</div>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div id="vaccination-rates-graph-1" class="vaccination-rates-graph"></div>
+                            </div>
+                            <div class="vaccination-rates-table">
+                                <div class="vaccination-rates-tables-upper-part">
+                                    <div class="vaccination-rates-table-title">
+                                        <div class="vaccination-rates-table-title-main">מספר מתחסנים - מצטבר</div>
+                                        <!-- <button class="vaccination-rates-table-title-main-buttom">buttom</button> -->
+                                    </div>
+                                    <div class="vaccination-rates-table-params">
+                                        <div class="vaccination-rates-table-param-container">
+                                            <div class="vaccination-rates-table-param-dot-greendark"></div>
+                                            <div class="vaccination-rates-table-param">מתחסנים מנה ראשונה</div>
+                                        </div>
+                                        <div class="vaccination-rates-table-param-container">
+                                            <div class="vaccination-rates-table-param-dot-greenlight"></div>
+                                            <div class="vaccination-rates-table-param">מתחסנים מנה שנייה</div>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div id="vaccination-rates-graph-2" class="vaccination-rates-graph"></div>
+                            </div>
+                            <div class="vaccination-rates-table border-remove">
+                                <div class="vaccination-rates-tables-upper-part">
+                                    <div class="vaccination-rates-table-title">
+                                        <div class="vaccination-rates-table-title-main">מספר מתחסנים - יומי</div>
+                                        <!-- <button class="vaccination-rates-table-title-main-buttom">buttom</button> -->
+                                    </div>
+                                    <div class="vaccination-rates-table-params">
+                                        <div class="vaccination-rates-table-param-container">
+                                            <div class="vaccination-rates-table-param-dot-greendark"></div>
+                                            <div class="vaccination-rates-table-param">מתחסנים מנה ראשונה</div>
+                                        </div>
+                                        <div class="vaccination-rates-table-param-container">
+                                            <div class="vaccination-rates-table-param-dot-greenlight"></div>
+                                            <div class="vaccination-rates-table-param">מתחסנים מנה שנייה</div>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div id="vaccination-rates-graph-3" class="vaccination-rates-graph"></div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- התחסנות לפי ישובים -->
+                <div class="cities-stats-card">
+                    <div class="cities-stats-container">
+                        <div class="cities-stats-graph-container">
+                            <div class="hospital-stats-graph-title ">התחסנות לפי ישובים</div>
+                            <div class="tablebb">
+                                <table class="table-cities ">
+                                    <thead>
+                                        <tr>
+                                            <th>ציון יומי מחושב</th>
+                                            <th>חולים פעילים לכל 10,000 נפש</th>
+                                            <th>חולים פעילים</th>
+                                            <th>%מתחסנים מנה שנייה</th>
+                                            <th>% מתחסנים מנה ראשונה</th>
+                                            <th id="hospital-title">ישוב</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                               <span class="score-1">5.6</span>
+                                        </td>
+                                        <td>50</td>
+                                        <td>14</td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="light-green-part light-green-part-1"></div>
+                                                <div class="white-part light-white-part-1"></div>
+                                            </div>
+                                            <div class="prec">64.54%</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="green-part green-part-1"></div>
+                                                <div class="white-part white-part-1"></div>
+                                            </div>
+                                            <div class="prec">93.54%</div>
+                                        </td>
+                                        <td id="hospital-data"> תל מונד </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="score-1">5.3</span>
+                                        </td>
+                                        <td>39</td>
+                                        <td>20</td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="light-green-part light-green-part-2"></div>
+                                                <div class="white-part light-white-part-2"></div>
+                                            </div>
+                                            <div class="prec">52.20%</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="green-part green-part-2"></div>
+                                                <div class="white-part white-part-2"></div>
+                                            </div>
+                                            <div class="prec">52.25%</div>
+                                        </td>
+                                        <td id="hospital-data"> כוכב יאיר </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="score-2">4.2</span>
+                                        </td>
+                                        <td>אין מידע </td>
+                                        <td>קטן מ-15 </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="light-green-part light-green-part-3"></div>
+                                                <div class="white-part light-white-part-3"></div>
+                                            </div>
+                                            <div class="prec">36.50%</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="green-part green-part-3"></div>
+                                                <div class="white-part white-part-3"></div>
+                                            </div>
+                                            <div class="prec">69.25%</div>
+                                        </td>
+                                        <td id="hospital-data">מיתר</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="score-2">5.0</span>
+                                        </td>
+                                        <td>אין מידע </td>
+                                        <td>קטן מ-15 </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="light-green-part light-green-part-4"></div>
+                                                <div class="white-part ligth-white-part-4"></div>
+                                            </div>
+                                            <div class="prec">47.85%</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="green-part green-part-4"></div>
+                                                <div class="white-part white-part-4"></div>
+                                            </div>
+                                            <div class="prec">77.70%</div>
+                                        </td>
+                                        <td id="hospital-data">להבים</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="score-2">4.1</span>
+                                        </td>
+                                        <td>14</td>
+                                        <td>קטן מ-15 </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="light-green-part light-green-part-5"></div>
+                                                <div class="white-part light-white-part-5"></div>
+                                            </div>
+                                            <div class="prec">35.50%</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="green-part green-part-5"></div>
+                                                <div class="white-part white-part-5"></div>
+                                            </div>
+                                            <div class="prec">87.70%</div>
+                                        </td>
+                                        <td id="hospital-data">עומר</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="score-2">3.2</span>
+                                        </td>
+                                        <td>50</td>
+                                        <td>קטן מ-15 </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="light-green-part light-green-part-6"></div>
+                                                <div class="white-part light-white-part-6"></div>
+                                            </div>
+                                            <div class="prec">80.50%</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="green-part green-part-6"></div>
+                                                <div class="white-part white-part-6"></div>
+                                            </div>
+                                            <div class="prec">80.25%</div>
+                                        </td>
+                                        <td id="hospital-data">מיתר</td>
+                                    </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="empy-card-cities"></div> -->
+                    </div>
+                </div>
+
+                <!-- תכנית רמזור -->
+                <div class="cities-stats-card">
+                    <div class="cities-stats-container">
+                        <div class="ramzor-stats-graph-container">
+                            <div class="hospital-stats-graph-title ">תכנית הרמזור</div>
+                            <div class="ramzor-subtitle">
+                                <div class="ramzor-subtitle-content-title">* מרכיבי ציון הרמזור (לפי נתוני השבוע האחרון)</div>
+                                <div class="ramzor-subtitle-content-blocks">
+                                    <div class="ramzor-subtitle-content-block-content">
+                                        <div class="ramzor-subtitle-content-block-red"></div>
+                                        <div class="ramzor-subtitle-content-block-words">
+                                            <div class="ramzor-subtitle-content-block-color-title">אדום - פעילות מינימלית</div>
+                                            <div class="ramzor-subtitle-content-block-color-subtitle">ציון 7.5 ומעלה</div>
+                                        </div>
+                                    </div>
+                                    <div class="ramzor-subtitle-content-block-content">
+                                        <div class="ramzor-subtitle-content-block-orange"></div>
+                                        <div class="ramzor-subtitle-content-block-words">
+                                            <div class="ramzor-subtitle-content-block-color-title">כתום - פעילות מצומצמת</div>
+                                            <div class="ramzor-subtitle-content-block-color-subtitle">ציון בין 6 ל - 7.5</div>
+                                        </div>
+                                    </div>
+                                    <div class="ramzor-subtitle-content-block-content">
+                                        <div class="ramzor-subtitle-content-block-yellow"></div>
+                                        <div class="ramzor-subtitle-content-block-words">
+                                            <div class="ramzor-subtitle-content-block-color-title">צהוב - פעילות מוגבלת</div>
+                                            <div class="ramzor-subtitle-content-block-color-subtitle">ציון בין 4.5 ל - 6</div>
+                                        </div>
+                                    </div>
+                                    <div class="ramzor-subtitle-content-block-content">
+                                        <div class="ramzor-subtitle-content-block-green"></div>
+                                        <div class="ramzor-subtitle-content-block-words">
+                                            <div class="ramzor-subtitle-content-block-color-title">ירוק - פעילות מורחבת</div>
+                                            <div class="ramzor-subtitle-content-block-color-subtitle">ציון עד 4.5</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tablebb">
+                                <table class="table-ramzor ">
+                                    <thead>
+                                        <tr>
+                                            <th>חולים פעילים</th>
+                                            <th>שיעור שינוי מאומתים*</th>
+                                            <th>% הבדיקות החיוביות*</th>
+                                            <th>חולים חדשים לכל 10,000 נפש*</th>
+                                            <th>ציון וצבע יומי</th>
+                                            <th id="hospital-title">ישוב</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                               52
+                                        </td>
+                                        <td>207%</td>
+                                        <td>16%</td>
+                                        <td>
+                                            100.9
+                                        </td>
+                                        <td>
+                                            <span class="score-1-u">5.6</span>
+                                        </td>
+                                        <td id="hospital-data"> מזרעה </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            146
+                                        </td>
+                                        <td>-56%</td>
+                                        <td>14%</td>
+                                        <td>
+                                            165.9
+                                        </td>
+                                        <td>
+                                            <span class="score-1-u">5.4</span>
+                                        </td>
+                                        <td id="hospital-data"> יאנוח-ג'ת</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            154
+                                        </td>
+                                        <td>-10%</td>
+                                        <td>21%</td>
+                                        <td>
+                                            135.4
+                                        </td>
+                                        <td>
+                                            <span class="score-1-u">5.9</span>
+                                     </td>
+                                        <td id="hospital-data">אבו גוש </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            55
+                                        </td>
+                                        <td>-50%</td>
+                                        <td>34%</td>
+                                        <td>
+                                            182.5
+                                        </td>
+                                        <td>
+                                            <span class="score-1-u">5.2</span>
+                                     </td>
+                                        <td id="hospital-data">ע'ג'ר</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            41
+                                        </td>
+                                        <td>48%</td>
+                                        <td>14%</td>
+                                        <td>
+                                            90.8
+                                        </td>
+                                        <td>
+                                            <span class="score-1-u">5.1</span>
+                                     </td>
+                                        <td id="hospital-data">ברקת</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            483
+                                        </td>
+                                        <td>-1%</td>
+                                        <td>17%</td>
+                                        <td>
+                                            139.5
+                                        </td>
+                                        <td>
+                                            <span class="score-1-u">4.6</span>
+                                     </td>
+                                        <td id="hospital-data">קרית מלאכי</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            69
+                                        </td>
+                                        <td>-42%</td>
+                                        <td>קטן מ-15 </td>
+                                        <td>
+                                            105.8
+                                        </td>
+                                        <td>
+                                            <span class="score-1-u">5.3</span>
+                                     </td>
+                                        <td id="hospital-data">עמנואל</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="empy-ramzor-card-cities"></div> -->
+                    </div>
+                </div>
+                
+                <!-- hospital rates -->
+                <div class="hospital-stats-card">
+                    <div class="hospital-stats-container">
+                        <div class="hospital-stats-graph-container ">
+                            <div class="hospital-stats-graph-title ">סטטוס בתי החולים</div>
+                            <!-- <div id="myGrid" style="height: 100%; width:100%;" class="ag-theme-alpine"></div> -->
+                            <!-- <div class="table"></div> -->
+                            <div class="tablebb">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="header-fix">אנשי צוות מאומתים <br>ובבידוד</th>
+                                            
+                                            <th>% תפוסת קורונה</th>
+                                            <th>% תפוסה כללי</th>
+                                            <th id="hospital-title">בית חולים</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        
+                                        <td>50</td>
+                                        <td class="loading-bar-1">
+                                            <div class="gray-part"></div>
+                                            <div class="no-info">אין<br>מידע</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="blue-part blue-part-1"></div>
+                                                <div class="white-part white-part-1"></div>
+                                            </div>
+                                            <div class="prec">93.54%</div>
+                                        </td>
+                                        <td id="hospital-data">שיבא</td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td>20</td>
+                                        <td class="loading-bar-1">
+                                            <div class="gray-part"></div>
+                                            <div class="no-info">אין<br>מידע</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="blue-part blue-part-2"></div>
+                                                <div class="white-part white-part-2"></div>
+                                            </div>
+                                            <div class="prec">52.25%</div>
+                                        </td>
+                                        <td id="hospital-data">יוספטל</td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td>45</td>
+                                        <td class="loading-bar-1">
+                                            <div class="gray-part"></div>
+                                            <div class="no-info">אין<br>מידע</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="blue-part blue-part-3"></div>
+                                                <div class="white-part white-part-3"></div>
+                                            </div>
+                                            <div class="prec">69.25%</div>
+                                        </td>
+                                        <td id="hospital-data">שמיר</td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td>36</td>
+                                        <td class="loading-bar-1">
+                                            <div class="gray-part"></div>
+                                            <div class="no-info">אין<br>מידע</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="blue-part blue-part-4"></div>
+                                                <div class="white-part white-part-4"></div>
+                                            </div>
+                                            <div class="prec">77.70%</div>
+                                        </td>
+                                        <td id="hospital-data">וולפסון</td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td>27</td>
+                                        <td class="loading-bar-1">
+                                            <div class="gray-part"></div>
+                                            <div class="no-info">אין<br>מידע</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="blue-part blue-part-5"></div>
+                                                <div class="white-part white-part-5"></div>
+                                            </div>
+                                            <div class="prec">87.70%</div>
+                                        </td>
+                                        <td id="hospital-data"> זיו צפת </td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td>19</td>
+                                        <td class="loading-bar-1">
+                                            <div class="gray-part"></div>
+                                            <div class="no-info">אין<br>מידע</div>
+                                        </td>
+                                        <td class="loading-bar-1">
+                                            <div class="prec-bar">
+                                                <div class="blue-part blue-part-6"></div>
+                                                <div class="white-part white-part-6"></div>
+                                            </div>
+                                            <div class="prec">80.25%</div>
+                                        </td>
+                                        <td id="hospital-data">  הלל יפה  </td>
+                                    </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="covid.js"></script>
+</body>
+</html>

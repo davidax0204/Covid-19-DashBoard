@@ -1,0 +1,213 @@
+.cities-stats-card
+{
+    padding: 1%
+}
+.cities-stats-container
+{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.cities-stats-graph-container
+{
+    background-color: white;
+    width: 75%;
+    border-radius: 20px;
+    height: 350px;
+    margin-left: 30px;
+}
+.empy-card-cities
+{
+    background-color: white;
+    width: 20%;
+    border-radius: 20px;
+    height: 350px;
+}
+.table-cities 
+  {
+    display: grid;
+    overflow-y: scroll;
+    max-height: 293px;
+    max-width: 2200px;
+    border-collapse: collapse !important;
+    grid-template-columns: 
+    minmax(75px, 25%)
+    minmax(75px, 25%)
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      /* minmax(150px, 3.33fr) */
+      /* minmax(150px, 1.67fr) */
+      /* minmax(150px, 3.33fr) */
+      /* minmax(150px, 1.67fr); */
+  }
+  .light-green-part
+  {
+    background: rgb(182, 202, 81);
+    /* width: 93.54%; */
+    height: 10px;
+  }
+  .green-part
+  {
+      background: rgb(28, 125, 126);
+      /* width: 93.54%; */
+      height: 10px;
+  }
+  .light-green-part-1
+  {
+    width: 64.54%;
+  }
+  .light-white-part-1
+  {
+    width: 35.4%;
+  }
+  .light-green-part-2
+  {
+    width: 52.20%;
+  }
+  .light-white-part-2
+  {
+    width: 47.8%;
+  }
+  .light-green-part-3
+  {
+    width: 36.50%;
+  }
+  .light-white-part-3
+  {
+    width: 65.5%;
+  }
+  .light-green-part-4
+  {
+    width: 47.85%;
+  }
+  .ligth-white-part-4
+  {
+    width: 52.15%;
+  }
+  .light-green-part-5
+  {
+    width: 35.50%;
+  }
+  .light-white-part-5
+  {
+      width: 64.5%;
+  }
+  .light-green-part-6
+  {
+    width: 80.5%;
+  }
+  .light-white-part-6
+  {
+      width: 19.5;
+  }
+  .green-part-1
+{
+    width: 93.54%;
+}
+
+ .white-part-1
+ {
+    width: 6.40%;
+ }
+ .green-part-2
+ {
+     width: 52%;
+ }
+ .white-part-2
+ {
+     width: 48%;
+ }
+ .green-part-3
+ {
+    width: 69%;
+ }
+ .white-part-3
+ {
+    width: 31%;
+ }
+ .green-part-4
+{
+    width: 77%;
+}
+.white-part-4
+{
+    width: 23%;
+}
+.green-part-5
+{
+    width: 87%;
+}
+.white-part-5
+{
+    width: 13%;
+}
+.green-part-6
+{
+    width: 80%;
+}
+.white-part-6
+{
+    width: 20%;
+}
+
+.score-1
+{
+    background-color: #fcfc70;
+    width: 50px !important;
+    height: 50px !important;
+    /* text-align: center; */
+    color: #2c2c2c;
+    font-weight: 700;  
+}
+.score-2
+{
+    background-color: #b8de92;
+    width: 50px !important;
+    height: 50px !important;
+    /* text-align: center; */
+    color: #2c2c2c;
+    font-weight: 700; 
+}
+
+@media (max-width:1030px)
+{
+  .empy-card-cities
+  {
+      display: none;
+  }
+  .cities-stats-card
+  { 
+    padding: 1%;
+  } 
+  .ramzor-stats-graph-container,
+  .cities-stats-graph-container
+  {
+      width: 100% !important;
+      margin-left: unset !important;
+  }
+  /* .cities-stats-container
+  {
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+  } */
+}
+@media (max-width:820px)
+{
+  .ramzor-stats-graph-container
+  {
+    height: 385px !important;
+  }
+}
+@media (max-width:620px)
+{
+  .ramzor-stats-graph-container
+  {
+    height: 400px !important;
+  }
+}

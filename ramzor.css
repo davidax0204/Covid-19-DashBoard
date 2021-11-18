@@ -1,0 +1,116 @@
+.table-ramzor 
+  {
+    display: grid;
+    overflow-y: scroll;
+    max-height: 245px;
+    max-width: 2200px;
+    border-collapse: collapse !important;
+    grid-template-columns: 
+    minmax(75px, 25%)
+    minmax(75px, 25%)
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      /* minmax(150px, 3.33fr) */
+      /* minmax(150px, 1.67fr) */
+      /* minmax(150px, 3.33fr) */
+      /* minmax(150px, 1.67fr); */
+  }
+  .table-ramzor td
+  {
+    line-height: 31px;
+  }
+  .ramzor-stats-graph-container
+{
+    background-color: white;
+    width: 75%;
+    border-radius: 20px;
+    height: 365px;
+    margin-left: 30px;
+}
+.empy-ramzor-card-cities
+{
+    background-color: white;
+    width: 20%;
+    border-radius: 20px;
+    height: 365px;
+}
+.score-1-u
+{
+    text-decoration: underline;
+    background-color: #fcfc70;
+    width: 50px !important;
+    height: 50px !important;
+    /* text-align: center; */
+    color: #2c2c2c;
+    font-weight: 700; 
+}
+.ramzor-subtitle
+{
+    direction: rtl;
+    padding-top: -18px;
+    padding-right: 18px;
+    display: flex;
+    flex-direction: column;
+}
+.ramzor-subtitle-content-title
+{
+    font-weight: 600;
+    font-size: 12px;
+}
+.ramzor-subtitle-content-blocks
+{
+    display: flex;
+    flex-direction: row;
+}
+.ramzor-subtitle-content-block-red
+{
+    width: 32px;
+    height: 32px;
+    background: #fa9e8f;
+}
+.ramzor-subtitle-content-block-orange
+{
+    width: 32px;
+    height: 32px;
+    background: #f2c580;
+}
+.ramzor-subtitle-content-block-green
+{
+    width: 32px;
+    height: 32px;
+    background: #b8de92;
+}
+.ramzor-subtitle-content-block-yellow
+{
+    width: 32px;
+    height: 32px;
+    background: #fcfc70;
+}
+.ramzor-subtitle-content-block-content
+{
+    display: flex;
+    flex-direction: row;
+    padding:5px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    vertical-align: middle;
+}
+.ramzor-subtitle-content-block-words
+{
+    padding-right: 7px;
+}
+.ramzor-subtitle-content-block-color-title
+{
+    font-size: 14.4px;
+    line-height: 14.4px;
+    font-weight: 400;
+}
+.ramzor-subtitle-content-block-color-subtitle
+{
+    font-size: 14.4px;
+    font-style: italic;
+    font-weight: 200;
+}
+

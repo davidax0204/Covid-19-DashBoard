@@ -1,0 +1,252 @@
+/* *, html {
+    margin:0;
+    padding:0;  
+} */
+.hospital-stats-card
+{
+    padding: 1%
+}
+.hospital-stats-container
+{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+@media (max-width: 1500px) and (min-width: 975px)
+{
+    .hospital-stats-card
+    {
+        padding: 1%;
+        padding-right: 2%;
+    }
+}
+.hospital-stats-graph-container
+{
+    background-color: white;
+    width: 75%;
+    border-radius: 20px;
+    height: 350px;
+}
+.hospital-stats-graph-title
+{
+    direction: rtl;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 18px;
+}
+.hospital-stats-graph-content
+{
+    height: 290px;
+}
+.myGrid
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (max-width:1030px)
+{
+    .hospital-stats-graph-container
+    {
+        width: 100%;
+    }
+}
+.ag-theme-alpine .ag-header {
+    --ag-foreground-color: black;
+    background-color:#e6f1f3;
+}
+/* .ag-theme-alpine {
+
+    --ag-background-color: transparent;
+} */
+
+
+/* .table
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+} */
+
+table 
+  {
+      color: black ;
+    display: grid;
+    overflow-y: scroll;
+    max-height: 293px;
+    max-width: 2200px;
+    border-collapse: collapse !important;
+    grid-template-columns: 
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      minmax(75px, 25%)
+      /* minmax(150px, 3.33fr) */
+      /* minmax(150px, 1.67fr) */
+      /* minmax(150px, 3.33fr) */
+      /* minmax(150px, 1.67fr); */
+  }
+  
+  thead,
+  tbody,
+  tr {
+    display: contents;
+  }
+  thead
+  {
+      direction: rtl;
+      text-align: right;
+  }
+  th,
+  td {
+    /* padding: 15px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+  }
+  tr{
+    border-bottom: 1pt solid black !important;
+  }
+  td {
+    border-bottom: 1pt solid #e6f1f3;
+  }
+  th {
+    position: sticky;
+    top: 0;
+    background: #e6f1f3;
+    text-align: center;
+    /* font-weight: normal; */
+    font-size: 14px;
+    line-height: 24px;
+    color: black;
+    padding: 5px 3px;
+    font-weight: 400
+  }
+  #hospital-title,
+  #hospital-data
+  {
+    text-align: right !important;
+  }
+  #hospital-data
+  {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  th:last-child {
+    border: 0;
+  }
+  
+  td {
+    text-align: center;
+    color: #808080;
+    line-height: 54px;
+  }
+  
+  /* tr:nth-child(even) td {
+    background: #f8f6ff;
+  } */
+
+  .loading-bar-1
+  {
+    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content:center;
+    vertical-align: middle;
+
+  }
+  .blue-part
+  {
+      background: #50cbfd;
+      /* width: 93.54%; */
+      height: 10px;
+  }
+  .white-part
+  {
+    background: #eff5f9;
+    
+    height: 10px;
+  }
+  .prec-bar
+  {
+      width: 38px;
+      display: flex;
+      flex-direction: row-reverse;
+  }
+.prec
+{
+    margin-right: 15px;
+}
+.blue-part-1
+{
+    width: 93.54%;
+}
+
+ .white-part-1
+ {
+    width: 6.40%;
+ }
+ .blue-part-2
+ {
+     width: 52%;
+ }
+ .white-part-2
+ {
+     width: 48%;
+ }
+ .blue-part-3
+ {
+    width: 69%;
+ }
+ .white-part-3
+ {
+    width: 31%;
+ }
+ .blue-part-4
+{
+    width: 77%;
+}
+.white-part-4
+{
+    width: 23%;
+}
+.blue-part-5
+{
+    width: 87%;
+}
+.white-part-5
+{
+    width: 13%;
+}
+.blue-part-6
+{
+    width: 80%;
+}
+.white-part-6
+{
+    width: 20%;
+}
+.gray-part
+{
+    background: #eff5f9;
+    width: 38px;
+    height: 10px;
+}
+.no-info
+{
+    margin-right: 15px;
+    direction: rtl;
+    line-height: 20px;
+    text-align: right;
+}
+
+.header-fix
+{
+    line-height: 15px;
+}
